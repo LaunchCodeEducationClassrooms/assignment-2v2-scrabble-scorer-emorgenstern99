@@ -95,7 +95,7 @@ let bonusVowelsObject = {
 };
 
 // due to an autograder issue
-// let scrabbleScore = scrabbleScorer;
+let scrabbleScore = scrabbleScorer;
 
 let scrabbleScoreObject = {
   name:'Scrabble',
