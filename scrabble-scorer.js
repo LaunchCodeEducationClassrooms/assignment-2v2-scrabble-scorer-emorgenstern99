@@ -68,7 +68,7 @@ let vowelBonusScore = function(word) {
   return points;
 };
 
-let scrabbleScore = function(word) {
+let scrabbleScorer = function(word) {
   word = word.toUpperCase();
 	let wordPoints = 0;
   let letter = word[0];
@@ -95,7 +95,7 @@ let bonusVowelsObject = {
 let scrabbleScoreObject = {
   name:'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scorerFunction: scrabbleScore 
+  scorerFunction: scrabbleScorer 
 };
 
 const scoringAlgorithms = [simpleScoreObject, bonusVowelsObject, scrabbleScoreObject];
@@ -119,7 +119,7 @@ function transform(oldPointStructure) {
     for (let i = 0; i < arrayOfLetters.length; i++) {
       letter = arrayOfLetters[i].toLowerCase();
       // Add the letter and point value to new object
-      newPointStructure[letter] = pointValue;
+      newPointStructure[letter] = Number(pointValue);
     }
   }
   return newPointStructure;
