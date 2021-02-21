@@ -85,22 +85,22 @@ let scrabbleScorer = function(word) {
 let simpleScoreObject = {
   name:'Simple Score',
   description: 'Each letter is worth 1 point.',
-  scorerFunction: simpleScore 
+  scoringFunction: simpleScore 
 };
 // the spaces for bonusVowels object is weird but required
 let bonusVowelsObject = {
   name:'Bonus Vowels',
   description: 'Vowels are 3 pts, consonants are 1 pt.	',
-  scorerFunction: vowelBonusScore 
+  scoringFunction: vowelBonusScore 
 };
 
 // due to an autograder issue
-let scrabbleScore = scrabbleScorer;
+// let scrabbleScore = scrabbleScorer;
 
 let scrabbleScoreObject = {
   name:'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scorerFunction: scrabbleScore 
+  scoringFunction: scrabbleScorer 
 };
 
 const scoringAlgorithms = [simpleScoreObject, bonusVowelsObject, scrabbleScoreObject];
@@ -135,7 +135,7 @@ let newPointStructure = transform(oldPointStructure);
 function runProgram() {
   let wordToScore = initialPrompt();
   let scoringAlgorithm = scorerPrompt();
-  let score = scoringAlgorithm.scorerFunction(wordToScore);
+  let score = scoringAlgorithm.scoringFunction(wordToScore);
   console.log("Score for '" + wordToScore + "':", score);
   // runThistoTestAutograder()
 }
