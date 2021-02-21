@@ -87,6 +87,7 @@ let simpleScoreObject = {
   description: 'Each letter is worth 1 point.',
   scorerFunction: simpleScore 
 };
+// the spaces for bonusVowels object is weird but required
 let bonusVowelsObject = {
   name:'Bonus Vowels',
   description: 'Vowels are 3 pts, consonants are 1 pt.	',
