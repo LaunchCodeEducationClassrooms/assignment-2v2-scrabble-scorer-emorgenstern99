@@ -99,7 +99,7 @@ let scrabbleScoreObject = {
   scorerFunction: scrabbleScorer 
 };
 
-const scoringAlgorithms = [simpleScoreObject, bonusVowelsObject, scrabbleScoreObject, { scoringFunction: vowelBonusScore }];
+const scoringAlgorithms = [simpleScoreObject, bonusVowelsObject, scrabbleScoreObject];
 
 function scorerPrompt() {
   console.log('Which scoring algorithm would you like to use?');
@@ -133,11 +133,24 @@ function runProgram() {
   let scoringAlgorithm = scorerPrompt();
   let score = scoringAlgorithm.scorerFunction(wordToScore);
   console.log("Score for '" + wordToScore + "':", score);
-
+  // runThistoTestAutograder()
 }
 
 // due to an autograder issue
 let scrabbleScore = scrabbleScorer;
+
+// Another autograder issue
+function runThistoTestAutograder() {
+  for (let i = 0; i < scoringAlgorithms.length; i++) {
+    thisObject = scoringAlgorithms[i];
+    for (key in thisObject) {
+      console.log(`key: ${key},
+      typeof(${thisObject}[${key}]): ${typeof(thisObject[key])},
+      --------`);
+      // thisObject[key]: ${thisObject[key]},
+    }
+  }
+}
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
