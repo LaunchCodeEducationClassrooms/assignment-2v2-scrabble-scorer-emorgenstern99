@@ -93,10 +93,14 @@ let bonusVowelsObject = {
   description: 'Vowels are 3 pts, consonants are 1 pt.	',
   scorerFunction: vowelBonusScore 
 };
+
+// due to an autograder issue
+let scrabbleScore = scrabbleScorer;
+
 let scrabbleScoreObject = {
   name:'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scorerFunction: scrabbleScorer 
+  scorerFunction: scrabbleScore 
 };
 
 const scoringAlgorithms = [simpleScoreObject, bonusVowelsObject, scrabbleScoreObject];
@@ -136,8 +140,7 @@ function runProgram() {
   // runThistoTestAutograder()
 }
 
-// due to an autograder issue
-let scrabbleScore = scrabbleScorer;
+
 
 // Another autograder issue
 function runThistoTestAutograder() {
