@@ -60,7 +60,7 @@ let vowelBonusScore = function(word) {
 	  for (const pointValue in vowelPointStructure) {
  
       if (vowelPointStructure[pointValue].includes(word[i])) {
-        points += pointValue;
+        points += Number(pointValue);
       }
  
 	  }
@@ -75,7 +75,7 @@ let scrabbleScore = function(word) {
   let letterPoints = 0;
  
 	for (let i = 0; i < word.length; i++) {
-    letter = word[i];
+    letter = word[i].toLowerCase();
     letterPoints = Number(newPointStructure[letter]);
     wordPoints += letterPoints;
   }
@@ -117,7 +117,7 @@ function transform(oldPointStructure) {
     let arrayOfLetters = oldPointStructure[pointValue];
     // for each letter, add it and the point value to the new object
     for (let i = 0; i < arrayOfLetters.length; i++) {
-      letter = arrayOfLetters[i];
+      letter = arrayOfLetters[i].toLowerCase();
       // Add the letter and point value to new object
       newPointStructure[letter] = pointValue;
     }
